@@ -39,6 +39,8 @@ export function useRoom(roomId: string) {
   const [questions, setQuestions] = useState<QuestionType[]>([]);
   const [title, setTitle] = useState("");
 
+  console.log(questions);
+
   useEffect(() => {
     const roomRef = database.ref(`rooms/${roomId}`);
     roomRef.on("value", (room) => {
